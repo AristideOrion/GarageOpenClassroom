@@ -48,7 +48,7 @@ public class Garage<T>  implements java.io.Serializable{
 					for(IOption pt :opt) 
 					{
 						
-						System.out.print(pt.getOptionName()+",");
+						System.out.println(pt.getOptionName()+",");
 						
 					}
 				}

@@ -7,16 +7,18 @@ public class Menu {
 	public Scanner lect = new Scanner(System.in);
 	public Menu() {}
 	
-	public void showMenu()
+	public void showMenu() 
 	{
 		while(choix != 4)
 		{
-			
+			System.out.println("------------------Garage à l'ivoirienne----------------------");
 			System.out.println("1-Lister mes véhicules");
 			System.out.println("2-Ajouter un véhicule");
 			System.out.println("3-Supprimer un véhicule");
 			System.out.println("4-Quitter le garage");
 			System.out.println("Faites votre choix svp");
+			
+			
 			
 			try 
 			{
@@ -26,9 +28,12 @@ public class Menu {
 				switch(choix)
 				{
 				case 1:
-					System.out.println("Voici  votre portefeuille de véhicule");
+					System.out.println("----------------------------------------");
+					System.out.println("Voici  votre liste de véhicule");
 					Saver save=new Saver();
 					save.saverDeserialize();
+					System.out.print("----------------------------------------");
+					
 					break;
 				case 2 :
 					System.out.println("Un nouveau véhicule");

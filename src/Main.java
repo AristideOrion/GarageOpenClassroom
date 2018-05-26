@@ -15,17 +15,17 @@ import com.vehicule.Gps;
 import com.vehicule.Lagouna;
 import com.vehicule.Vehicule;
 public class  Main  {
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		//TODO creer garage and charger fichier 
 		
-		 Garage tonGarage=new Garage();
+		 Garage<?> tonGarage=new Garage<Object>();
 		 ArrayList<IOption> vosOption = new ArrayList<IOption>();
 		vosOption.add(new Climatiseur());
 		vosOption.add(new Gps());
 		//TODO creation vehicule
 		Lagouna modeleV300=new Lagouna(1200,Marque.RENO,vosOption,"Reno_C4");
-		modeleV300.setMarque(Marque.PIGEOT);
-		modeleV300.setMoteur(new MoteurDiesel(TypeMoteur.DIESEL,"double cylindre",1500));
+		//modeleV300.setMarque(Marque.PIGEOT);
+		//modeleV300.setMoteur(new MoteurDiesel(TypeMoteur.DIESEL,"double cylindre",1500));
 		modeleV300.addOption(new Climatiseur());
 		
 		
@@ -48,9 +48,9 @@ public class  Main  {
 		Menu my_menu=new Menu();
 		my_menu.showMenu();
 		//TODO saver
-		/*Saver save =new Saver();
-		save.serializeSaver(tonGarage);
-		save.saverDeserialize();*/
+		//Saver save =new Saver();
+		//save.serializeSaver(tonGarage);
+		//save.saverDeserialize();
 	}
 
 }
