@@ -5,9 +5,10 @@ public class Menu {
 	
 	public Integer choix=5;
 	public Scanner lect = new Scanner(System.in);
+	public static Saver save=new Saver();
 	public Menu() {}
 	
-	public void showMenu() 
+	public <T> void showMenu() 
 	{
 		while(choix != 4)
 		{
@@ -30,13 +31,17 @@ public class Menu {
 				case 1:
 					System.out.println("----------------------------------------");
 					System.out.println("Voici  votre liste de véhicule");
-					Saver save=new Saver();
 					save.saverDeserialize();
 					System.out.print("----------------------------------------");
 					
 					break;
 				case 2 :
-					System.out.println("Un nouveau véhicule");
+					System.out.println("----------------------------------------");
+					System.out.println("Un nouveau véhicule, ci-dessous la liste des options");
+					Garage<T> gara=new Garage<>();
+					gara.vehiculeAdd(gara.listAddOtpion());
+					System.out.print("----------------------------------------");
+					
 					break;
 				case 3 :
 					System.out.println("Vous voulez supprimer un véhicule");
@@ -52,7 +57,8 @@ public class Menu {
 			}
 			catch(Exception e)
 			{
-				e.getMessage();
+				System.out.println(e.getMessage());
+				
 			}
 		}
 	}
